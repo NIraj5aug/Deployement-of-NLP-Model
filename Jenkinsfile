@@ -1,5 +1,5 @@
 pipeline {
-	agent {label='Ansible'}
+	agent Ansible
 	    stages {
 	        stage('Clone Repository') {
 	        /* Cloning the repository to our workspace */
