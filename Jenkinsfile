@@ -9,8 +9,6 @@ pipeline {
 	   }
 	   stage('Build Image') {
 	        steps {
-		sh 'sudo docker stop nlpmodel'
-		sh 'sudo docker rm nlpmodel'
 		sh 'sudo docker build -t mynlpmodel:v1 .'
 	        }
 	  }
