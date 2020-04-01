@@ -11,9 +11,6 @@ pipeline {
 	        steps {
 		sh 'sudo docker build -t mynlpmodel:v1 .'
 		
-	        // This step should not normally be used in your script. Consult the inline help for details.
-                withDockerRegistry(credentialsId: 'jfrog-docker', url: 'http://52.183.129.20:8082/ui/admin/repositories/local/dockerrepo/') {
-                // some block
                 }
 	  }
 	  stage('Run Image') {
