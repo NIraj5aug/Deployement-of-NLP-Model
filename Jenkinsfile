@@ -12,7 +12,7 @@ pipeline {
 			    /***sh 'sudo docker stop nlpmodel'
 			    sh 'sudo docker rm nlpmodel'  
 			    sh 'sudo docker image prune -f'  ***/
-			    sh 'sudo docker build -t mynlpmodel:$BUILD_NUMBER .'
+			    sh 'sudo docker build -t niraj5aug/mynlpmodel:$BUILD_NUMBER .'
 		
                 }
 	  }
@@ -21,9 +21,9 @@ pipeline {
           steps {
 
           withCredentials([usernameColonPassword(credentialsId: 'docker_hub', variable: 'docker_cred')]) {
-          sh "docker login -username 'niraj5aug' -password '$docker_cred'"
-          sh "docker push mynlpmodel:$BUILD_NUMBER"
-                       } 
+		  sh "docker login -u niraj5aug -p {$docker_cred}"
+                   }
+		   sh "docker push mynlpmodel:$BUILD_NUMBER"
                 
                 }
      }
