@@ -20,8 +20,8 @@ pipeline {
           stage('Docker Push') {
           steps {
 
-          withCredentials([usernameColonPassword(credentialsId: 'docker_hub', variable: 'docker_cred')]) {
-		  sh "docker login -u niraj5aug -p {$docker_cred}"
+          withCredentials([usernameColonPassword(credentialsId: 'DockerHUB', variable: 'dockerhub')]) {
+		  sh "docker login -u niraj5aug -p {$dockerhub}"
                    }
 		   sh "docker push mynlpmodel:$BUILD_NUMBER"
                 
