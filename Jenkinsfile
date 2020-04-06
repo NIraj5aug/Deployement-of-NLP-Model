@@ -30,7 +30,7 @@ pipeline {
 
 	  stage('Run Image') {
 	       steps {
-	        sh 'sudo docker run -d -p 5000:4000 --name mymodel niraj5aug/mynlpmodel'
+	        sh 'sudo docker run -d -p 5001:4000 --name mymodel niraj5aug/mynlpmodel'
             }
 		  
 	   }
