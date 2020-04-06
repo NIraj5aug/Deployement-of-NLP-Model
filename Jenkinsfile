@@ -21,7 +21,7 @@ pipeline {
           steps {
 
           withCredentials([usernameColonPassword(credentialsId: 'docker_hub', variable: 'docker_cred')]) {
-          sh "docker login -username 'niraj5aug' -password $docker_cred"
+          sh "docker login -username 'niraj5aug' -password '$docker_cred'"
           sh "docker push mynlpmodel:$BUILD_NUMBER"
                        } 
                 
