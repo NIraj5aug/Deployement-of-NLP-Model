@@ -23,14 +23,14 @@ pipeline {
                   /***withCredentials([usernameColonPassword(credentialsId: 'DockerHUB', variable: 'dockerhub')]) {
 		 sh "docker login -u niraj5aug -p {$dockerhub}"
                    } ***/
-		   sh "docker push mynlpmodel:$BUILD_NUMBER"
+		   sh "docker push niraj5aug/mynlpmodel:$BUILD_NUMBER"
                 
                 }
      }
 
 	  stage('Run Image') {
 	       steps {
-	        sh 'sudo docker run -d -p 5000:4000 --name mymodel mynlpmodel:v1'
+	        sh 'sudo docker run -d -p 5000:4000 --name mymodel niraj5aug/mynlpmodel'
             }
 		  
 	   }
