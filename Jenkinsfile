@@ -9,9 +9,9 @@ pipeline {
 	   }
 	        stage('Build Image') {
 	        steps {
-			    /***sh 'sudo docker stop nlpmodel'
-			    sh 'sudo docker rm nlpmodel'  
-			    sh 'sudo docker image prune -f'  ***/
+			    sh 'sudo docker stop mymodel'
+			    sh 'sudo docker rm mymodel'  
+			    sh 'sudo docker image prune -f'
 			    sh 'sudo docker build -t niraj5aug/mynlpmodel:$BUILD_NUMBER .'
 		
                 }
